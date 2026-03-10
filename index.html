@@ -39,6 +39,11 @@
 </head>
 <body class="bg-gray-50">
 
+    <!-- Note de prototype -->
+    <div class="bg-red-600 text-white text-center py-2 px-4 font-bold uppercase text-sm tracking-wider sticky top-0 z-[60]">
+        ⚠️ Prototype non-approuvé — Pour fins de test uniquement
+    </div>
+
     <!-- En-tête -->
     <header class="bg-pm-navy text-white py-6 shadow-md">
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
@@ -47,7 +52,7 @@
                     <img src="https://projetmontreal.org/equipe/elvira-carhuallanqui" alt="Elvira Carhuallanqui" onerror="this.src='https://ui-avatars.com/api/?name=Elvira+Carhuallanqui&background=00A9CE&color=fff'" class="object-cover w-full h-full">
                 </div>
                 <div>
-                    <h1 class="text-2xl font-bold leading-tight">Elvira Carhuallanqui</h1>
+                    <h1 class="text-2xl font-bold leading-tight text-white">Elvira Carhuallanqui</h1>
                     <p class="text-pm-cyan font-medium">Conseillère de la ville • Parc-Extension</p>
                 </div>
             </div>
@@ -58,7 +63,7 @@
     </header>
 
     <!-- Sélecteur de langue -->
-    <nav class="bg-white border-b sticky top-0 z-50 overflow-x-auto shadow-sm">
+    <nav class="bg-white border-b sticky top-[40px] z-50 overflow-x-auto shadow-sm">
         <div class="container mx-auto px-4 flex space-x-6 min-w-max">
             <button onclick="switchLang('fr')" class="nav-tab py-4 px-2 whitespace-nowrap active" id="btn-fr">Français</button>
             <button onclick="switchLang('en')" class="nav-tab py-4 px-2 whitespace-nowrap" id="btn-en">English</button>
