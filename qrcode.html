@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiche QR - Guide 311 Parc-Extension</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .no-print { display: none; }
+            body { background-color: white; p: 0; }
+            .poster-container { shadow: none; border: 10px solid #003366; width: 100%; max-width: none; }
+        }
+        :root {
+            --pm-cyan: #00A9CE;
+            --pm-navy: #003366;
+        }
+        .text-pm-navy { color: var(--pm-navy); }
+        .bg-pm-navy { background-color: var(--pm-navy); }
+        .bg-pm-cyan { background-color: var(--pm-cyan); }
+        .border-pm-cyan { border-color: var(--pm-cyan); }
+        
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:p-10 flex flex-col items-center">
+
+    <div class="no-print flex space-x-4 mb-8">
+        <button onclick="window.print()" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition transform hover:scale-105">
+            🖨️ Imprimer l'affiche
+        </button>
+        <a href="landing_page_311.html" class="bg-pm-navy hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-full shadow-lg transition">
+            🏠 Retour à la page
+        </a>
+    </div>
+
+    <!-- Conteneur de l'affiche -->
+    <div class="poster-container bg-white w-full max-w-[800px] aspect-[1/1.414] shadow-2xl border-[12px] border-pm-navy p-8 flex flex-col justify-between relative overflow-hidden">
+        
+        <!-- Note de prototype -->
+        <div class="absolute top-0 left-0 w-full bg-red-600 text-white text-[10px] font-bold text-center py-1 uppercase tracking-tighter z-20">
+            Prototype non-approuvé — Test uniquement
+        </div>
+
+        <!-- Décoration de coin -->
+        <div class="absolute top-0 right-0 w-32 h-32 bg-pm-cyan opacity-20 rounded-full -mr-16 -mt-16"></div>
+
+        <!-- En-tête -->
+        <div class="flex items-center justify-between mt-4 mb-6 border-b-4 border-pm-cyan pb-6">
+            <div class="flex items-center space-x-4">
+                <div class="w-24 h-24 rounded-full border-4 border-pm-cyan overflow-hidden bg-gray-200">
+                    <img src="https://projetmontreal.org/equipe/elvira-carhuallanqui" alt="Elvira Carhuallanqui" onerror="this.src='https://ui-avatars.com/api/?name=Elvira+Carhuallanqui&background=00A9CE&color=fff'" class="object-cover w-full h-full">
+                </div>
+                <div>
+                    <h1 class="text-3xl font-black text-pm-navy leading-tight">Elvira<br>Carhuallanqui</h1>
+                    <p class="text-pm-cyan font-bold uppercase tracking-tight text-xs">Conseillère de la ville • Parc-Extension</p>
+                </div>
+            </div>
+            <div class="text-right">
+                <p class="text-pm-navy font-black text-5xl">311</p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-gray-500">Service citoyen</p>
+            </div>
+        </div>
+
+        <!-- Titre Principal -->
+        <div class="text-center mb-6">
+            <h2 class="text-3xl font-black text-pm-navy mb-2 leading-tight">Besoin d'aide dans le quartier ?</h2>
+            <p class="text-lg text-gray-600">Scannez le code pour voir le guide 311 dans votre langue :</p>
+        </div>
+
+        <!-- Grille des QR Codes -->
+        <div class="grid grid-cols-2 gap-x-8 gap-y-4 flex-grow px-4">
+            <!-- Français -->
+            <div class="flex items-center space-x-4 p-2 border-b border-gray-100">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://rngadam.github.io/311/#fr" class="w-20 h-20" alt="QR Français">
+                <div>
+                    <span class="font-bold text-pm-navy block text-lg">Français</span>
+                    <span class="text-xs text-gray-400">#fr</span>
+                </div>
+            </div>
+
+            <!-- English -->
+            <div class="flex items-center space-x-4 p-2 border-b border-gray-100">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://rngadam.github.io/311/#en" class="w-20 h-20" alt="QR English">
+                <div>
+                    <span class="font-bold text-pm-navy block text-lg">English</span>
+                    <span class="text-xs text-gray-400">#en</span>
+                </div>
+            </div>
+
+            <!-- Español -->
+            <div class="flex items-center space-x-4 p-2 border-b border-gray-100">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://rngadam.github.io/311/#es" class="w-20 h-20" alt="QR Español">
+                <div>
+                    <span class="font-bold text-pm-navy block text-lg">Español</span>
+                    <span class="text-xs text-gray-400">#es</span>
+                </div>
+            </div>
+
+            <!-- Greek -->
+            <div class="flex items-center space-x-4 p-2 border-b border-gray-100">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://rngadam.github.io/311/#gr" class="w-20 h-20" alt="QR Greek">
+                <div>
+                    <span class="font-bold text-pm-navy block text-lg">Ελληνικά</span>
+                    <span class="text-xs text-gray-400">#gr</span>
+                </div>
+            </div>
+
+            <!-- Punjabi -->
+            <div class="flex items-center space-x-4 p-2 border-b border-gray-100">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://rngadam.github.io/311/#pa" class="w-20 h-20" alt="QR Punjabi">
+                <div>
+                    <span class="font-bold text-pm-navy block text-lg">ਪੰਜਾਬੀ</span>
+                    <span class="text-xs text-gray-400">#pa</span>
+                </div>
+            </div>
+
+            <!-- Bengali -->
+            <div class="flex items-center space-x-4 p-2 border-b border-gray-100">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://rngadam.github.io/311/#bn" class="w-20 h-20" alt="QR Bengali">
+                <div>
+                    <span class="font-bold text-pm-navy block text-lg">বাংলা</span>
+                    <span class="text-xs text-gray-400">#bn</span>
+                </div>
+            </div>
+
+            <!-- Urdu -->
+            <div class="flex items-center space-x-4 p-2 border-b border-gray-100">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://rngadam.github.io/311/#ur" class="w-20 h-20" alt="QR Urdu">
+                <div>
+                    <span class="font-bold text-pm-navy block text-lg">اردو</span>
+                    <span class="text-xs text-gray-400">#ur</span>
+                </div>
+            </div>
+
+            <!-- Hindi -->
+            <div class="flex items-center space-x-4 p-2 border-b border-gray-100">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://rngadam.github.io/311/#hi" class="w-20 h-20" alt="QR Hindi">
+                <div>
+                    <span class="font-bold text-pm-navy block text-lg">हिन्दी</span>
+                    <span class="text-xs text-gray-400">#hi</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message d'intervention -->
+        <div class="mt-8 bg-pm-navy text-white p-6 rounded-2xl text-center shadow-lg">
+            <p class="text-xl font-bold mb-1">Votre intervention est essentielle !</p>
+            <p class="text-sm opacity-90">Signalez les nids-de-poule, lumières brisées ou collectes oubliées via le 311.</p>
+        </div>
+
+        <!-- Pied de affiche -->
+        <div class="mt-6 flex justify-between items-end border-t border-gray-100 pt-4">
+            <div>
+                <p class="text-[10px] font-bold text-pm-navy uppercase tracking-widest">Projet Montréal • Parc-Extension</p>
+                <p class="text-xs text-gray-600 font-medium">elvira.carhuallanqui@montreal.ca</p>
+            </div>
+            <div class="text-right">
+                <p class="text-[9px] text-gray-300 font-mono italic">https://rngadam.github.io/311/</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
